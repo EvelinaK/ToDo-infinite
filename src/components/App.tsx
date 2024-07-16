@@ -1,14 +1,12 @@
 import { FunctionComponent, useState } from "react";
 
-import todos from "../store/todos";
-
 import Button from "./ui/Button";
 import Header from "./ui/Header";
 import Footer from "./ui/Footer";
 import Clock from "./ui/Clock";
 import ModalWindow from "./ui/ModalWindow";
 import TodoList from "./TodoList";
-import TodoDetails from "./TodoDetails";
+
 import { AppDispatch } from "../store";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -34,7 +32,6 @@ const App: FunctionComponent = () => {
         )}
         <Clock />
         <TodoList modalToggler={modalWindowToggler} />
-        <TodoDetails />
       </main>
       <Footer />
     </>
