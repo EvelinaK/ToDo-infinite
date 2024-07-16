@@ -1,0 +1,162 @@
+// .clock {
+//   position: relative;
+//   width: 200px;
+//   height: 200px;
+//   border: 10px solid #333;
+//   border-radius: 50%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: #fff;
+//   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+
+// }
+
+// .hand {
+//   position: absolute;
+//   background-color: #333;
+//   transform-origin: bottom;
+//   transform: rotate(90deg);
+//   transition: all 0.5s ease-in-out;
+// }
+
+// .hour {
+//   width: 6px;
+//   height: 60px;
+//   bottom: 50%;
+// }
+
+// .minute {
+//   width: 4px;
+//   height: 80px;
+//   bottom: 50%;
+// }
+
+// .second {
+//   width: 2px;
+//   height: 90px;
+//   background-color: red;
+//   bottom: 50%;
+// }
+.clock {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../../assets/images/clock.png"),
+    radial-gradient(
+      circle,
+      rgb(245, 239, 239, 1) 0%,
+      rgb(245, 239, 239, 1) 11%,
+      rgba(245, 239, 239, 1) 38%
+    );
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 0px 4px 12px 6px rgba(244, 194, 127, 0.67);
+
+  @media (max-width: 400px) {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.clock:before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: rgba(244, 194, 127, 1);
+
+  border-radius: 50%;
+  z-index: 999;
+  @media (max-width: 400px) {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.clock .hour,
+.clock .min,
+.clock .sec {
+  position: absolute;
+}
+
+.clock .hour,
+.hr {
+  width: 110px;
+  height: 110px;
+  @media (max-width: 400px) {
+    width: 65px;
+    height: 65px;
+  }
+}
+.clock .min,
+.mn {
+  width: 140px;
+  height: 140px;
+  @media (max-width: 400px) {
+    width: 85px;
+    height: 85px;
+  }
+}
+.clock .sec,
+.sc {
+  width: 170px;
+  height: 170px;
+  @media (max-width: 400px) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.hr,
+.mn,
+.sc {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hr:before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 60px;
+  background: rgba(216, 96, 91, 1);
+
+  z-index: 10;
+  border-radius: 6px 6px 0 0;
+  @media (max-width: 400px) {
+    width: 4px;
+    height: 35px;
+  }
+}
+.mn:before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 70px;
+  background: rgba(244, 194, 127, 1);
+
+  z-index: 11;
+  border-radius: 6px 6px 0 0;
+  @media (max-width: 400px) {
+    height: 45px;
+    width: 3px;
+  }
+}
+.sc:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 120px;
+  background: rgba(193, 192, 192, 1);
+  z-index: 12;
+  border-radius: 6px 6px 0 0;
+
+  @media (max-width: 400px) {
+    height: 75px;
+  }
+}

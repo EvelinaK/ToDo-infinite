@@ -1,0 +1,194 @@
+@use "variables";
+
+.titleList {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 35px;
+  align-items: center;
+
+  @media (max-width: 400px) {
+    margin-bottom: 15px;
+  }
+
+  & span {
+    font-size: 2.25rem;
+
+    @media (max-width: 400px) {
+      font-size: 1.3rem;
+      padding: 1em 1em;
+    }
+
+    @media (min-width: 700px) {
+      font-size: 2rem;
+    }
+  }
+}
+
+.todoList {
+  max-width: 100%;
+  width: 100%;
+  height: 90%;
+  overflow-y: auto;
+  scroll-snap-type: y;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-align: start;
+
+  border-radius: 10px; /* Optional: Add border-radius for rounded corners */
+  @media (min-width: 1280px) {
+    max-width: 100%;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px; /* Adjust scrollbar width */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #fff;
+    background-image: -webkit-gradient(
+      linear,
+      40% 0%,
+      75% 84%,
+      from(#d9d9d9),
+      to(#d9d9d9),
+      color-stop(0.6, #9a9494)
+    );
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Optional: Track background color */
+  }
+}
+
+.todoListContainer {
+  display: flex;
+  flex-direction: column;
+  // position: fixed;
+  // top: 70%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  height: 55vh;
+  width: 100%; /* Adjust width as necessary */
+  min-width: 600px; /* Adjust max-width as necessary */
+  overflow: hidden; /* Ensure the container does not overflow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, #11111a1a 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  border-radius: 10px; /* Add border-radius for rounded corners */
+  background-color: #ffffff; /* Add background color if necessary */
+  padding: 2em 3em;
+
+  @media (max-width: 700px) {
+    min-width: 400px;
+  }
+  @media (max-width: 400px) {
+    padding: 1em 1em;
+    min-width: fit-content;
+  }
+}
+
+.todoDetails {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid variables.$decor-color;
+
+  @media (min-width: 1280px) {
+    flex-shrink: 1;
+    gap: 2.5rem;
+    max-width: 50%;
+    padding: 0 0 0 2.5rem;
+    border-bottom: 0;
+    border-left: 2px solid variables.$decor-color;
+  }
+}
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.title {
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.titleContainer {
+  display: flex;
+  @media (max-width: 400px) {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+
+.icons {
+  cursor: pointer;
+  width: 2em;
+  height: 2em;
+  @media (max-width: 400px) {
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
+
+.rotated {
+  transform: rotate(90deg);
+}
+
+.subTasks {
+  display: block;
+  margin-left: 1.5rem;
+
+  & h3 {
+    font-size: 1rem;
+
+    @media (min-width: 700px) {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.titleHighlight {
+  cursor: pointer;
+  overflow-wrap: anywhere;
+  text-decoration: underline wavy variables.$decor-color;
+}
+.logo {
+  width: 3rem;
+  height: auto;
+}
+
+.addIcon {
+  cursor: pointer;
+  stroke: #f46036;
+  width: 2.5rem;
+  height: auto;
+  margin-left: auto;
+  transition: 0.2s linear;
+
+  @media (max-width: 400px) {
+    width: 2rem;
+  }
+  &:hover {
+    transform: scale(1.3);
+  }
+}
+
+.containerList {
+  display: flex;
+  flex-direction: row;
+}
